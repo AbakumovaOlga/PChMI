@@ -1,0 +1,75 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_PChMI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition  Width="0.3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
+            <TextBox x:Name="F_Number" MinWidth="100" MaxLength="250">Nomenclature number</TextBox>
+            <Button x:Name="F_Find"  Content="Find" Click="F_Find_Click" />
+            <ComboBox Name="F_ChooseGrop"  MinWidth="100" VerticalAlignment="Top"/>
+            <Button x:Name="F_GropFind" Content="Group" Click="F_GropFind_Click" />
+        </StackPanel>
+        <DataGrid Grid.Column="0" Grid.Row="1" x:Name="phonesGrid" AutoGenerateColumns="False" HorizontalGridLinesBrush="DarkGray"
+                  RowBackground="LightGray" AlternatingRowBackground="White" Grid.RowSpan="2"  />
+        <DockPanel LastChildFill="True" Grid.Column="1" Grid.Row="0">
+            <Button x:Name="F_Archive" DockPanel.Dock="Top" Content="Archive" Click="F_Archive_Click" />
+            <Button x:Name="F_Print" DockPanel.Dock="Top" Content="Print" Click="F_Print_Click" />
+            <Button x:Name="F_Diagram" DockPanel.Dock="Bottom" Content="Diagram" Click="F_Diagram_Click" />
+        </DockPanel>
+        <Grid Grid.Column="2" Grid.Row="1" >
+            
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button x:Name="F_Receipt"    Grid.Column="0" Grid.Row="0" Content="Receipt" />
+            <GridSplitter Grid.Column="1" Grid.Row="0" ShowsPreview="False" Width="3"
+        HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+            <Button x:Name="F_Delivary"  Grid.Column="2" Grid.Row="0" Content="Delivary" />
+            <GridSplitter Grid.Column="1" Grid.Row="1" ShowsPreview="False" Height="3"
+        VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+            <Button  x:Name="F_Write"  Grid.Column="0" Grid.Row="2" Content="Write" />
+            <Button x:Name="F_Rev"  Grid.Column="2" Grid.Row="2" Content="Rev" />
+            
+        </Grid>
+        <Grid Margin="10" Grid.Column="2" Grid.Row="2">
+            <Border BorderBrush="Navy" BorderThickness="1,3,1,5">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="LightCyan" Offset="0.0" />
+                        <GradientStop Color="LightBlue" Offset="0.5" />
+                        <GradientStop Color="DarkTurquoise" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel Margin="10">
+                    <Button x:Name="F_Sum" DockPanel.Dock="Top" Content="Sum" Click="F_Sum_Click" />
+                    <Button x:Name="F_SumDeliv" Margin="0,10" DockPanel.Dock="Top" Content="SumDeliv" Click="F_SumDeliv_Click" />
+                    <Button x:Name="F_Less" DockPanel.Dock="Bottom" Content="Less" Click="F_Less_Click" />
+                    <Button x:Name="helpButton" Margin="0,10" Command="ApplicationCommands.Help" Content="Help" />
+
+                </StackPanel>
+            </Border>
+        </Grid>
+        
+
+    </Grid>
+</Window>

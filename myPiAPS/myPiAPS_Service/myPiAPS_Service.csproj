@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6FE94B3-320F-4EE1-9A32-8623ABC6989D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>myPiAPS_Service</RootNamespace>
+    <AssemblyName>myPiAPS_Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindingModels\ProductBM.cs" />
+    <Compile Include="BindingModels\ProductGroupBM.cs" />
+    <Compile Include="BindingModels\ProductWaybillBM.cs" />
+    <Compile Include="BindingModels\ShopHallBM.cs" />
+    <Compile Include="BindingModels\StockBM.cs" />
+    <Compile Include="BindingModels\TypeBM.cs" />
+    <Compile Include="BindingModels\WaybillBM.cs" />
+    <Compile Include="ImplementationsBD\DelivareServiceBD.cs" />
+    <Compile Include="ImplementationsBD\DiagrServiceBD.cs" />
+    <Compile Include="ImplementationsBD\MainServiceBD.cs" />
+    <Compile Include="ImplementationsBD\ProdGroupServiceBD.cs" />
+    <Compile Include="ImplementationsBD\ProductServiceBD.cs" />
+    <Compile Include="ImplementationsBD\RecieptServiceBD.cs" />
+    <Compile Include="ImplementationsBD\RevalServiceBD.cs" />
+    <Compile Include="ImplementationsBD\ShopHallServiceBD.cs" />
+    <Compile Include="ImplementationsBD\StockServiceBD.cs" />
+    <Compile Include="ImplementationsBD\TypeServiceBD.cs" />
+    <Compile Include="ImplementationsBD\UserServiceBD.cs" />
+    <Compile Include="ImplementationsBD\WaybillServiceBD.cs" />
+    <Compile Include="ImplementationsBD\WriteOffServiceBD.cs" />
+    <Compile Include="Interfaces\IDelivareService.cs" />
+    <Compile Include="Interfaces\IDiagrService.cs" />
+    <Compile Include="Interfaces\IMainService.cs" />
+    <Compile Include="Interfaces\IProdGroupService.cs" />
+    <Compile Include="Interfaces\IProductService.cs" />
+    <Compile Include="Interfaces\IProductWaybillService.cs" />
+    <Compile Include="Interfaces\IRecieptService.cs" />
+    <Compile Include="Interfaces\IRevalService.cs" />
+    <Compile Include="Interfaces\ISerializeMYService.cs" />
+    <Compile Include="Interfaces\IShopHallService.cs" />
+    <Compile Include="Interfaces\IStockService.cs" />
+    <Compile Include="Interfaces\ITypeOfWaybillService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Interfaces\IWaybillService.cs" />
+    <Compile Include="Interfaces\IWriteOffService.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Migrations\201901091243004_FirstMigration.cs" />
+    <Compile Include="Migrations\201901091243004_FirstMigration.Designer.cs">
+      <DependentUpon>201901091243004_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901111021575_SecondMigration.cs" />
+    <Compile Include="Migrations\201901111021575_SecondMigration.Designer.cs">
+      <DependentUpon>201901111021575_SecondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901111219080_ThirdMigration.cs" />
+    <Compile Include="Migrations\201901111219080_ThirdMigration.Designer.cs">
+      <DependentUpon>201901111219080_ThirdMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901121103576_PRODPriceRequired.cs" />
+    <Compile Include="Migrations\201901121103576_PRODPriceRequired.Designer.cs">
+      <DependentUpon>201901121103576_PRODPriceRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901121123352_WBNotRequredIDS.cs" />
+    <Compile Include="Migrations\201901121123352_WBNotRequredIDS.Designer.cs">
+      <DependentUpon>201901121123352_WBNotRequredIDS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PiAPSDbContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ImplementationsBD\SerializeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\myPiAPS_Model\myPiAPS_Model.csproj">
+      <Project>{d3e16b3e-cdc6-4887-8948-1313fbef9a0e}</Project>
+      <Name>myPiAPS_Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901091243004_FirstMigration.resx">
+      <DependentUpon>201901091243004_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901111021575_SecondMigration.resx">
+      <DependentUpon>201901111021575_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901111219080_ThirdMigration.resx">
+      <DependentUpon>201901111219080_ThirdMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901121103576_PRODPriceRequired.resx">
+      <DependentUpon>201901121103576_PRODPriceRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901121123352_WBNotRequredIDS.resx">
+      <DependentUpon>201901121123352_WBNotRequredIDS.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
